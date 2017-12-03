@@ -1,0 +1,233 @@
+
+body{
+    margin:0;
+    width: 1510px;
+    padding: 0;
+}
+
+
+#frame {/*----------图片轮播相框容器----------*/
+    position: absolute; /*--绝对定位，方便子元素的定位*/
+    width: 960px;
+    height: 320px;
+    overflow: hidden;/*--相框作用，只显示一个图片---*/
+    border-radius:10px;
+    left:275px;
+}
+
+#photos img {
+    float: left;
+    width:960px;
+    height:320px;
+}
+#photos {/*---设置总的图片宽度--通过位移来达到轮播效果----*/
+    position: absolute;z-index:9px;
+    width: calc(960px * 5);/*---修改图片数量的话需要修改下面的动画参数*/
+}
+.play{
+    animation: ma 20s ease-out infinite alternate;/**/
+}
+@keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/
+    0%,20% {        margin-left: 0px;       }
+    25%,40% {       margin-left: -960px;    }
+    45%,60% {       margin-left: -1920px;    }
+    65%,80% {       margin-left: -2880px;    }
+    85%,100% {      margin-left: -3840px;   }
+}
+.num{
+    position:absolute;z-index:10;
+    display:inline-block;
+    right:10px;
+    top: 280px;
+    border-radius:100%;
+    background:black;
+    width:25px;height:25px;
+    line-height:25px;
+    cursor:pointer;
+    color:#fff;
+    text-align:center;
+    opacity:0.8;
+}
+.num:hover{background:red;}
+.num:hover,#photos:hover{animation-play-state:paused;}
+.num:nth-child(2){margin-right:30px}
+.num:nth-child(3){margin-right:60px}
+.num:nth-child(4){margin-right:90px}
+.num:nth-child(5){margin-right:120px}
+#a1:hover ~ #photos{animation: ma1 .5s ease-out forwards;}
+#a2:hover ~ #photos{animation: ma2 .5s ease-out forwards;}
+#a3:hover ~ #photos{animation: ma3 .5s ease-out forwards;}
+#a4:hover ~ #photos{animation: ma4 .5s ease-out forwards;}
+#a5:hover ~ #photos {animation: ma5 .5s ease-out forwards;}
+@keyframes ma1 {0%{margin-left:-3840px;}100%{margin-left:-0px;} }
+@keyframes ma2 {0%{margin-left:-3840px;}100%{margin-left:-960px;}   }
+@keyframes ma3 {100%{margin-left:-1920px;}   }
+@keyframes ma4 {100%{margin-left:-2880px;}   }
+@keyframes ma5 {100%{margin-left:-3840px;}  }
+
+
+#body{
+    width: 960px;
+    margin: auto;
+    height: 1600px;
+}
+#lun ul li:not(:first-child){
+    display: none;
+    width:960px ;
+    height: 320px;
+    margin: auto;
+}
+#lift ul li{
+    width: 40px;
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    padding:8px 3px;
+    border-bottom: 2px solid black;
+    background-color: black;
+    position: relative;
+    left:875px;
+    top:320px;
+    border-radius:10px;
+    list-style: none;
+}
+#lift ul .lift-item:hover{
+    background-color: red;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+#picture1{
+    width: 360px;
+    height: 540px;
+    background:url("暗夜.gif");
+    position: absolute;
+    top:336px;
+    border-radius: 5px;
+}
+#picture2{
+    width: 360px;
+    height: 540px;
+    background:url("枯骨.gif");
+    float: left;
+    position: absolute;
+    top:876px;
+    border-radius: 5px;
+}
+#picture4 {
+    width: 360px;
+    height: 540px;
+    background:url("迷失.gif");
+    position: absolute;
+    top:336px;
+    border-radius: 5px;
+}
+#picture3 {
+    width: 360px;
+    height: 540px;
+    background:url("山谷.gif");
+    float: left;
+    position: absolute;
+    top:876px;
+    border-radius: 5px;
+}
+#pr{
+    position: absolute;
+    width:510px ;
+    height: 1080px;
+    top:340px;
+    right:344px;
+}
+.pr2{
+    position: relative;
+    width: 300px;
+    height: 1080px;
+    right: -210px;
+    top:-791px
+}
+.pr3{
+    position: relative;
+    width: 280px;
+    height: 1080px;
+    right: -242px;
+    top:-617px
+}
+.pr4{
+    position: absolute;
+    width: 235px;
+    height: 1080px;
+    right: 372px;
+    top:340px
+}
+.par1{
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: paleturquoise;
+}
+p{
+    line-height:   1.5em;
+    padding: 10px;
+}
+span{
+    color: red;
+    font-size: large;
+}
+.cur{
+    border-radius: 100%;
+    background-color:powderblue;
+    width: 200px;
+    height: 200px;
+}
+.cur1{
+    width: 200px;
+    height: 150px;
+    border-radius: 100% 0 0 0;
+    background-color:powderblue;
+    text-align: right;
+}
+.cur2{
+        width:300px;
+        height: 200px;
+        position: relative;
+        left: 100px;
+        line-height: 100px;
+        font-weight: bolder;
+    }
+.cur2::before {
+    content: ''; /* 用伪元素来生成一个矩形 */
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    transform: skew(45deg);
+    background-color: khaki;
+}
+
+.pie3 {
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    background:powderblue;
+    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+    color:wheat;
+}
+.pie3::before {
+       content: '';
+       display: block;
+       margin-left: 50%;
+       height: 100%;
+       border-radius: 0 100% 100% 0 / 50%;
+       background-color: inherit;
+       transform-origin: left;
+       animation: spin 3s linear infinite, bg 6s step-end infinite;
+   }
+@keyframes spin {
+                to { transform: rotate(.5turn); }
+            }
+@keyframes bg {
+    50% { background: currentColor; }
+}
+.par3{
+    width: 250px;
+    height:420px;
+}
