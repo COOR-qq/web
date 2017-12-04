@@ -1,7 +1,7 @@
 
 body{
     margin:0;
-    width: 1510px;
+    width: 1508px;
     padding: 0;
 }
 
@@ -28,7 +28,7 @@ body{
     animation: ma 20s ease-out infinite alternate;/**/
 }
 @keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/
-    0%,20% {        margin-left: 0px;       }
+    0%,20% {        margin-left: 0;       }
     25%,40% {       margin-left: -960px;    }
     45%,60% {       margin-left: -1920px;    }
     65%,80% {       margin-left: -2880px;    }
@@ -68,7 +68,8 @@ body{
 
 #body{
     width: 960px;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
     height: 1600px;
 }
 #lun ul li:not(:first-child){
@@ -137,7 +138,7 @@ a{
     width:510px ;
     height: 1080px;
     top:340px;
-    right:344px;
+   left:670px;
 }
 .pr2{
     position: relative;
@@ -157,8 +158,15 @@ a{
     position: absolute;
     width: 235px;
     height: 1080px;
-    right: 372px;
-    top:340px
+    right: -6px;
+    top:-11px
+}
+.pr41{
+    position: absolute;
+    width: 235px;
+    height: 1080px;
+    right: 33px;
+    top:-11px
 }
 .par1{
     border-bottom-right-radius: 25px;
